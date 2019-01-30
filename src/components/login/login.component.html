@@ -1,0 +1,10 @@
+<div>
+  <span>Login</span>
+  <input [(ngModel)]="loginModel.email">
+
+  <span>Password</span>
+  <input type="password" [(ngModel)]="loginModel.password">
+  <button (click)="login()">Login</button>
+
+  <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+</div>

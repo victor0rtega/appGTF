@@ -1,0 +1,15 @@
+<div>
+  <span>FirstName</span>
+  <input [(ngModel)]="userModel.firstName">
+
+  <span>LastName</span>
+  <input [(ngModel)]="userModel.lastName">
+
+  <span>Email</span>
+  <input [(ngModel)]="userModel.email">
+  <span>Password</span>
+  <input type="password" [(ngModel)]="userModel.password">
+
+  <button (click)="register()">Register</button>
+  <button (click)="cancel()">Cancel</button>
+</div>
