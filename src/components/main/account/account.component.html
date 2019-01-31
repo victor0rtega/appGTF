@@ -1,0 +1,27 @@
+
+
+<div *ngIf="accounts.length > 0">
+  <ul>
+    <li>Name</li>
+    <li>Type</li>
+    <li>Deposits</li>
+    <li>Withdrawals</li>
+    <li>Balance</li>
+  </ul>
+  <ul *ngFor="let item of accounts">
+    <li>{{item.name}}</li>
+    <li>{{item.type}}</li>
+    <li>{{item.deposits}}</li>
+    <li>{{item.withdrawals}}</li>
+    <li>{{item.balance}}</li>
+  </ul>
+</div>
+
+<div>
+  
+  <select class='select-option' required [(ngModel)]='cardSelected' (change)='onCardSelected($event)'>
+      <option class='option' *ngFor='let card of cards' [value]="card.type">{{card.name}}</option>
+  </select>
+
+  <button (click)="createAccount()">Create Account</button>
+</div>
