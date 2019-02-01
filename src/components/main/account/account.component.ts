@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import './account.component.scss';
 import { AccountService } from 'src/app/services/account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
-  templateUrl: './account.component.html'
+  templateUrl: './account.component.html',
+  styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
 
@@ -14,13 +15,15 @@ export class AccountComponent implements OnInit {
 
 
   constructor(
-    public accountService: AccountService
+    public accountService: AccountService,
+    public router: Router
   ) { }
 
   ngOnInit() {
     this.accountService.getAccount().subscribe((data) => {
       if (data.length) {
         this.accounts = data.response;
+        console.log('accounts from api', this.accounts);
       }
       this.accounts = [{
         name: 'Tarjeta Oro',
@@ -59,5 +62,10 @@ export class AccountComponent implements OnInit {
         }
       });
     }
+  }
+
+  private logout() {
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 }

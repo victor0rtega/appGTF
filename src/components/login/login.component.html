@@ -1,10 +1,15 @@
-<div>
-  <span>Login</span>
-  <input [(ngModel)]="loginModel.email">
+<div class="login">
+  <h1 class="h1">Login</h1>
+  <div class="input">
+    <label class="label">Email</label>
+    <input class="email" [(ngModel)]="loginModel.email">
+  </div>
+  <div class="input">
+    <label class="label">Password</label>
+    <input class="password" type="password" [(ngModel)]="loginModel.password">
+  </div>
+  <a [routerLink]="['/register']" class="btn-link">Register</a>
+  <button (click)="login()" class="button">Login</button>
 
-  <span>Password</span>
-  <input type="password" [(ngModel)]="loginModel.password">
-  <button (click)="login()">Login</button>
-
-  <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+  
 </div>

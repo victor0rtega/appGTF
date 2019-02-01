@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import './register-user.component.scss';
 import { UserService } from '../../../app/services/user.service';
-import { User } from '../../../app/models';
+
 
 @Component({
   selector: 'app-register-user',
-  templateUrl: './register-user.component.html'
+  templateUrl: './register-user.component.html',
+  styleUrls: ['./register-user.component.scss']
 })
 export class RegisterUserComponent implements OnInit {
 

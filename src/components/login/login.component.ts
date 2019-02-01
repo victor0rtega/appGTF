@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import './login.component.scss';
 import { AuthenticationService } from '../../app/services/authentication.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: 'login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 

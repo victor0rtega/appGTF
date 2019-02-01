@@ -1,27 +1,41 @@
 
-
-<div *ngIf="accounts.length > 0">
-  <ul>
-    <li>Name</li>
-    <li>Type</li>
-    <li>Deposits</li>
-    <li>Withdrawals</li>
-    <li>Balance</li>
-  </ul>
-  <ul *ngFor="let item of accounts">
-    <li>{{item.name}}</li>
-    <li>{{item.type}}</li>
-    <li>{{item.deposits}}</li>
-    <li>{{item.withdrawals}}</li>
-    <li>{{item.balance}}</li>
-  </ul>
-</div>
-
-<div>
+<div class="account">
+  <a (click)="logout()" class="logout">Logout</a>
+  <h1 class="h1">Accounts</h1>
   
-  <select class='select-option' required [(ngModel)]='cardSelected' (change)='onCardSelected($event)'>
-      <option class='option' *ngFor='let card of cards' [value]="card.type">{{card.name}}</option>
-  </select>
+  <div class="create">
+    <div class="input">
+      <label class="label">Select type</label>    
+      <select class='select-option' required [(ngModel)]='cardSelected' (change)='onCardSelected($event)'>
+          <option class='option' *ngFor='let card of cards' [value]="card.type">{{card.name}}</option>
+      </select>
+    </div>
 
-  <button (click)="createAccount()">Create Account</button>
+    <button (click)="createAccount()" class="button">Create Account</button>
+  </div>
+  
+  
+  <div class="list-container">
+    <div *ngIf="accounts.length > 0" class="table-grid" >
+      <ul class="header-grid">
+        <li class="li-text">Name</li>
+        <li class="li-text">Type</li>
+        <li class="li-text">Deposits</li>
+        <li class="li-text">Withdrawals</li>
+        <li class="li-text">Balance</li>
+      </ul>
+      <div class="body-grid">
+        <ul *ngFor="let item of accounts" class="row-grid">
+          <li class="li-text">{{item.name}}</li>
+          <li class="li-text">{{item.type}}</li>
+          <li class="li-text">{{item.deposits}}</li>
+          <li class="li-text">{{item.withdrawals}}</li>
+          <li class="li-text">{{item.balance}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
 </div>

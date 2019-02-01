@@ -1,15 +1,28 @@
-<div>
-  <span>FirstName</span>
-  <input [(ngModel)]="userModel.firstName">
+<div class="register">
+    <h1 class="h1">Register user</h1>
+    <div class="input">
+      <label class="label">Firstname</label>
+      <input class="box" [(ngModel)]="userModel.firstName">
+    </div>
+  
+    <div class="input">
+      <label class="label">Lastname</label>
+      <input class="box" [(ngModel)]="userModel.lastName">
+    </div>
 
-  <span>LastName</span>
-  <input [(ngModel)]="userModel.lastName">
+    <div class="input">
+      <label class="label">Email</label>
+      <input class="box" [(ngModel)]="userModel.email">
+    </div>
 
-  <span>Email</span>
-  <input [(ngModel)]="userModel.email">
-  <span>Password</span>
-  <input type="password" [(ngModel)]="userModel.password">
-
-  <button (click)="register()">Register</button>
-  <button (click)="cancel()">Cancel</button>
+    <div class="input">
+      <label class="label">Password</label>
+      <input class="box" type="password" [(ngModel)]="userModel.password">
+    </div>
+ 
+    <div class="submit">
+        <button (click)="register()" class="button">Register</button>
+        <button (click)="cancel()" class="button">Cancel</button>
+    </div>
+  
 </div>
